@@ -21,7 +21,7 @@ struct answer {
 };
 
 void Interface(coefficients* coef) {
-	std::cout << "Введите коэффициенты a, b и c:" << endl;
+	std::cout << "Enter a, b and c:" << endl;
 	std::cout << "a: ";
 	std::cin >> coef->a;
 	std::cout << "b: ";
@@ -54,14 +54,14 @@ answer Equation(coefficients coef) {
 
 void PrintAnswers(answer ans) {
 	if (ans.num == zero_roots) {
-		std::cout << "Корней нет." << endl;
+		std::cout << "No roots." << endl;
 	}
 	if (ans.num == one_root) {
-		std::cout << "Единственный корень равен " << ans.x1 << endl;
+		std::cout << "The only root is " << ans.x1 << endl;
 	}
 	else if (ans.num == two_roots) {
-		std::cout << "Первый корень равен " << ans.x1 << endl;
-		std::cout << "Второй корень равен " << ans.x2 << endl;
+		std::cout << "The first root is " << ans.x1 << endl;
+		std::cout << "The second root is " << ans.x2 << endl;
 	}
 }
 
@@ -69,7 +69,6 @@ int main()
 {
 	coefficients coef;
 	answer ans;
-	setlocale(LC_ALL, "Russian");
 	Interface(&coef);
 	ans = Equation(coef);
 	PrintAnswers(ans);
